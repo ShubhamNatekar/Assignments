@@ -36,7 +36,14 @@ const vehicleRoutes = (app, fs) => {
             res.send(JSON.parse(data));
         });
     });
-   
+   app.get('/vehicles/:vin', (req, res, next) => {
+   console.log('vehicles: ' + req.params.vin + ' Request received');
+   let parsedContent = JSON.parse(req.query);
+   let payload = req.body.payload; // your json data
+   //res.status(201).send('success');
+});
+
+
     // CREATE
     app.post('/vehicles', (req, res) => {
 
